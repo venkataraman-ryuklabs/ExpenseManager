@@ -1,0 +1,126 @@
+.add-expense-form{
+    max-width: 760px;
+    margin: 24px auto;
+    padding: 20px;
+    background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(16,24,40,0.08);
+    border: 1px solid rgba(16,24,40,0.04);
+    animation: fadeInUp .36s ease both;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+.add-expense-form h2{
+    margin: 0 0 12px 0;
+    font-size: 1.25rem;
+    color: #0f172a;
+}
+
+.expense-input-form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 20px;
+    align-items: center;
+}
+
+.expense-input-form label{
+    font-size: 0.9rem;
+    color: #334155;
+}
+
+.expense-input-form input[type="number"],
+.expense-input-form input[type="date"],
+.expense-input-form select,
+.expense-input-form textarea{
+    grid-column: span 1;
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #e6eef8;
+    background: #fff;
+    color: #0f172a;
+    box-sizing: border-box;
+    outline: none;
+    transition: box-shadow .15s ease, border-color .15s ease;
+}
+
+.expense-input-form textarea{ min-height: 72px; resize: vertical; grid-column: 1 / -1; }
+
+.expense-input-form input:focus,
+.expense-input-form select:focus,
+.expense-input-form textarea:focus{
+    border-color: #60a5fa;
+    box-shadow: 0 4px 12px rgba(96,165,250,0.12);
+}
+
+fieldset{
+    grid-column: 1 / -1;
+    border: none;
+    padding: 0;
+    margin: 6px 0 0 0;
+}
+
+fieldset legend{
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 8px;
+}
+
+fieldset > label{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-right: 12px;
+    font-size: 0.95rem;
+    color: #334155;
+}
+
+.expense-input-form input[type="radio"],
+.expense-input-form input[type="checkbox"]{
+    width: 16px;
+    height: 16px;
+    accent-color: #2563eb;
+}
+
+.expense-input-form label[for="billable"],
+.expense-input-form label[for="reimbursable"],
+.expense-input-form label[for="personal-expense"]{
+    grid-column: span 1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Make submit button span full width on small screens and stand out */
+.expense-input-form button[type="submit"]{
+    grid-column: 1 / -1;
+    padding: 10px 14px;
+    margin-top: 8px;
+    background: linear-gradient(90deg,#2563eb,#60a5fa);
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 8px 18px rgba(37,99,235,0.18);
+    transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+}
+
+.expense-input-form button[type="submit"]:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 12px 26px rgba(37,99,235,0.22);
+}
+
+@media (max-width: 720px){
+    .expense-input-form{
+        grid-template-columns: 1fr;
+    }
+
+    .expense-input-form textarea{ grid-column: 1; }
+}
+
+/* subtle entrance animation to signal tab switch */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(8px) scale(.998); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
