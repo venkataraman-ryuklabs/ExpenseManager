@@ -33,6 +33,7 @@ header>h1 {
 }
 
 .expense-input-form label {
+    align-items: flex-start;
     font-size: 14px;
     font-weight: 500;
     color: #333333;
@@ -78,7 +79,7 @@ header>h1 {
 
 .expense-input-form fieldset label {
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     gap: 6px;
     margin-top: 4px;
 }

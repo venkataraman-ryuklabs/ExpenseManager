@@ -78,20 +78,21 @@ export default function AddExpense() {
                         Credit/Debit Card
                     </label>
                 </fieldset>
+                <div className='checkbox-input'>
+                    <label htmlFor="billable"> Billable
+                        <input type='checkbox' name="expenseType" value="billable" id="billable" />
+                    </label>
 
-                <label htmlFor="billable"> Billable
-                    <input type='checkbox' name="expenseType" value="billable" id="billable" />
-                </label>
+                    <label htmlFor="reimbursable"> Re-imbursable
+                        <input type='checkbox' name="expenseType" value="re-imbursable" id="reimbursable" />
+                    </label>
 
-                <label htmlFor="reimbursable"> Re-imbursable
-                    <input type='checkbox' name="expenseType" value="re-imbursable" id="reimbursable" />
-                </label>
+                    <label htmlFor="personal-expense"> Personal Expense
+                        <input type='checkbox' name="expenseType" value="personal-expense" id="personal-expense" />
+                    </label>
 
-                <label htmlFor="personal-expense"> Personal Expense
-                    <input type='checkbox' name="expenseType" value="personal-expense" id="personal-expense" />
-                </label>
-
-                <button type="submit">Submit</button>
+                    <button type="submit">Submit</button>
+                </div>
             </form>
         </section>
     );
