@@ -1,6 +1,8 @@
 import React from 'react';
 import './AddExpense.css';
 
+import { toast } from "react-toastify";
+
 export default function AddExpense() {
 
     const [expense, setExpense] = React.useState({
@@ -21,7 +23,20 @@ export default function AddExpense() {
     }
 
     function receiveExpenseDetails(event: React.FormEvent<HTMLFormElement>) {
-        event.preventDefault();                                                                             //prevent refresh on form submission and url querystring
+        event.preventDefault();   //prevent refresh on form submission and url querystring
+
+        const fakeApiCall = () =>
+            new Promise <void> ((resolve) => setTimeout(resolve, 1500));
+
+        toast.promise(
+            fakeApiCall(),
+            {
+                pending: "Submitting...",
+                success: "Expense Recorded successfully",
+                error: "Submission failed"
+            }
+        );
+
 
         const formData = new FormData(event.currentTarget);
         const data = Object.fromEntries(formData.entries());
